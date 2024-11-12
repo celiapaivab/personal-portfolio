@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
+import 'animate.css';
 
 
 export const Contact = () => {
@@ -26,7 +27,7 @@ export const Contact = () => {
     const handleSubmit = async (e) =>{
         e.preventDefault();
         setButtonText('Sending...');
-        let reponse = await fetch("http://localhost:5000/contact", {
+        let response = await fetch("http://localhost:5000/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "Application/json;charset=utf-8",
@@ -81,7 +82,6 @@ export const Contact = () => {
                     </Col>
                 </Row>
             </Container>
-            <img className="background-image-right" src={colorSharp2}></img>
         </section>
     )
 }

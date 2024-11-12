@@ -48,7 +48,19 @@ export const NavBar = () => {
                             <a href="#"><img src={navIcon2} alt=""/></a>
                             <a href="#"><img src={navIcon3} alt=""/></a>
                         </div>
-                        <button className="vvd" onClick={() => console.log('connect')}><span>Let's Connect</span></button>
+                        {/* <button className="vvd" onClick={() => console.log('connect')}><span>Let's Connect</span></button> */}
+                        <button className="vvd" 
+                        onClick={() => {
+                            const contactSection = document.getElementById('contact');
+                            if (contactSection) {
+                                contactSection.scrollIntoView({ behavior: 'smooth' });
+                            } else {
+                                console.error("Contact section not found");
+                            }
+                        }}
+                        >
+                            <span>Let's Connect</span>
+                        </button>
                     </span>
                 </Navbar.Collapse>
             </Container>
